@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotstar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scrollbar-width: none;
+        }
+
+        .container {
+            background-color: brown;
+            width: 100%;
+            height: 100vh;
+        }
+
+        nav {
+            background-color: rgb(0, 0, 0);
+            width: 8vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+
+        .nav-item {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px ;
+            color: #ffffff;
+            font-size: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+            bottom:30px;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            color: white;
+            transform: scale(1.1);
+        }
+
+
+
+        .logo {
+            margin-bottom: 60px;
+        }
+
+        .logo:hover {
+            cursor: pointer;
+        }
+
+        i {
+            font-size: 17px;
+            color: rgb(145, 141, 141);
+            font-weight: 200;
+            margin-bottom: 35px;
+        }
+
+        nav i:hover {
+            color: white;
+            cursor: pointer;
+        }
+
+        .profile {
+           
+            bottom:130px;
+            width: 27px;
+            height: 27px;
+            background: linear-gradient(to right, #ec2F4B, #009FFF);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            cursor: pointer;
+        }
+        .profile:hover{
+            transform: scale(1.1);
+        }
+       
+
+        .main {
+            width: 92vw;
+            min-height: 100vh;
+            background-color: rgb(0, 0, 0);
+            float: right;
+        }
+
+        .sec1 {
+            padding: 10px;
+            background-color: rgb(0, 0, 0);
+            display: flex;
+        }
+
+        .movie {
+            width: 35%;
+            height:18%;
+            border-radius: 15px;
+
+        }
+
+        .grp {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            gap: 10px;
+            margin-left: 20px;
+            margin-bottom: 150px;
+            color: white;
+        }
+
+        .darelogo {
+            width: 40px;
+            border-radius: 2px;
+            top:5px;
+        }
+
+        .text {
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .stream {
+            color: rgb(154, 154, 154);
+            font-size: 13px;
+        }
+
+        .desc {
+            font-family: calibri;
+            margin-top: 85px;
+            margin-left: -175px;
+            color: white;
+            font-weight: 400;
+            font-size:24px;
+        }
+
+        .desc1 {
+            font-family: calibri;
+            margin-top: 120px;
+            margin-left: -335px;
+            font-weight: 400;
+            font-size:24px;
+        }
+
+        .trial {
+            font-size: 20px;
+            margin-bottom: -300px;
+            margin-left: -170px;
+            background-color: #434345;
+            border: none;
+            width: 130px;
+            padding: 10px;
+            color: white;
+            border-radius: 5px;
+            
+        }
+
+        .trial:hover {
+            cursor: pointer;
+            background-color: #5d5d5d;
+        }
+
+        .movie,
+        .watch,
+        .darelogo:hover {
+            cursor: pointer;
+        }
+
+        .sec2 {
+            min-height: 90vh;
+            border-radius: 1%;
+        }
+
+        .movie2 {
+            width: 100%;
+            position: sticky;
+            top: 0px;
+            border-radius: 1%;
+        }
+
+        .movie2:hover {
+            cursor: pointer;
+        }
+
+        .movdesc {
+            width: 100%;
+            min-height: 200px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            bottom: 370px;
+            background: linear-gradient(to bottom, transparent, #000000, #000000);
+
+        }
+
+        .new {
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: rgb(70, 145, 250);
+            text-shadow: 0 0 20px black;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .three {
+            color: rgb(189, 189, 189);
+            font-family: calibri;
+            font-weight: 500;
+            font-size: 15px;
+        }
+
+        .ted1 {
+            color: white;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        .drama {
+            color: white;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .watchnow {
+            width: 250px;
+            height: 55px;
+            font-size: 20px;
+            padding: 10px;
+            background: #009FFF;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #ec2F4B, #009FFF);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #ec2F4B, #009FFF);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            font-weight: 700;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            margin-top:35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .watchnow i{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin:4px;
+            color: aliceblue;
+
+        }
+        .watchnow:hover {
+            transform: scale(1.05);
+        }
+       
+        .sec3 {
+            width: 100%;
+            min-height: 250px;
+            background-color: black;
+            padding: 25px;
+            position: relative;
+            bottom: 370px;
+
+        }
+
+        .lr {
+            font-size: 25px;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: white;
+            font-weight: 500;
+        }
+
+        .film {
+            padding: 18px;
+            display: flex;
+            overflow: scroll;
+            gap: 20px;
+        }
+        .sfilm1{
+            width: 350px;
+            height: 60px;
+            padding: 10px;
+            display: flex;
+            overflow: scroll;
+            gap: 10px;
+            margin-left: 700px;
+            margin-top: -60px;
+        }
+        .series,.s1 {
+            border-radius: 5px;
+            transition: 0.4s all ease;
+        }
+        .s1:hover{
+            scale: 1.2;
+            cursor: pointer;
+            border: 1px solid white;
+        }
+        .series:hover {
+            scale: 1.1;
+            cursor: pointer;
+            border: 2px solid white;
+        }
+        .dar{
+            top:1px;
+            font-size:22px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <img src="logo.png" alt="" width="55px" class="logo">
+            <div class="nav-item active"><i class="fas fa-home"></i></div>
+            <div class="nav-item"><i class="fas fa-search"></i></div>
+            <div class="nav-item"><i class="fas fa-tv"></i></div>
+            <div class="nav-item"><i class="fa-solid fa-film"></i></div>
+            <div class="nav-item"><i class="fas fa-running"></i></div>
+            <div class="nav-item"><i class="fas fa-video"></i></div>
+            <div class="nav-item"><i class="fas fa-th-large"></i></div>
+            <div class="profile"></div>
+        </nav>
+        <div class="main">
+            <!-- section1 -->
+            <div class="sec1">
+                <img src="dare.avif" alt="" class="movie">
+                <div class="grp">
+                    <img src="darelogo.png" alt="" class="darelogo">
+                    <div class="text">
+                        <p class=" dar">Daredevil</p>
+                        <p class="stream">Streaming From March 5</p>
+                    </div>
+                    <p class="desc">"Daredevil's secret life is on the line in this gripping</p>
+                    <p class="desc1">superhero drama!"</p>
+                    <button class="trial">Watch Now</button>
+                </div>
+            </div>
+            <!-- section2 -->
+            <div class="sec2">
+                
+                   <video class="movie2" autoplay loop muted playsinline>
+                        <source src="videoplayback.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                 <div class="movdesc">
+                    <img src="Avatar.webp" alt="" width="250px"><br>
+                    <b class="three">2022  ●  U/A 13+  ●  3h 12m  ●  6 Languages</b>
+                    <div class="ted1">
+                        <p>"Set more than a decade after the first film, dive into the story of the Sully family;</p>
+                        <p>the lengths they go to keep each other safe and the tragedies they endure."</p>
+                    </div>
+                    <b class="drama">Sci-Fi | Action | Adventure | Fantasy | Drama | Epic</b>
+                    <button class="watchnow"><i class="fa-solid fa-play fa-light"></i> Watch Now</button>
+                    <div class="sfilm1">
+                        <img src="2.jpg" alt="" height="40px" class="s1">
+                        <img src="3.jpg" alt="" height="40px" class="s1">
+                        <img src="4.jpg" alt="" height="40px" class="s1">
+                        <img src="5.jpg" alt="" height="40px" class="s1">
+                        <img src="6.jpg" alt="" height="40px" class="s1">
+                        <img src="7.jpg" alt="" height="40px" class="s1">
+                        <img src="8.jpg" alt="" height="40px" class="s1">
+                        
+                    </div>
+                </div>
+                <div class="sec3">
+                    <h5 class="lr">Continue Watching</h5>
+                    <div class="film">
+                        <img src="1.jpg" alt="" width="180px" class="series">
+                        <img src="2.jpg" alt="" width="180px" class="series">
+                        <img src="3.jpg" alt="" width="180px" class="series">
+                        <img src="4.jpg" alt="" width="180px" class="series">
+                        <img src="5.jpg" alt="" width="180px" class="series">
+                        <img src="6.jpg" alt="" width="180px" class="series">
+                        <img src="7.jpg" alt="" width="180px" class="series">
+                        <img src="8.jpg" alt="" width="180px" class="series">
+                        <img src="9.jpg" alt="" width="180px" class="series">
+                        <img src="10.jpg" alt="" width="180px" class="series">
+                    </div><br>
+                    <h5 class="lr">Popular Channels</h5>
+                    <div class="film">
+                        
+                        <img src="1.2.avif" alt="" width="180px" class="series">
+                        <img src="1.4.avif" alt="" width="180px" class="series">
+                        <img src="1.5.webp" alt="" width="180px" class="series">
+                        <img src="1.6.webp" alt="" width="180px" class="series">
+                        <img src="1.7.webp" alt="" width="180px" class="series">
+                        <img src="1.8.avif" alt="" width="180px" class="series">
+                        <img src="1.9.avif" alt="" width="180px" class="series">
+                        <img src="1.10.avif" alt="" width="180px" class="series">
+                      
+                    </div>
+                    <h5 class="lr">Rejoice Anime Fans!</h5>
+                    <div class="film">
+                        <img src="2.4.jpg" alt="" width="180px" class="series">
+                        <img src="2.5.jpg" alt="" width="180px" class="series">
+                        <img src="2.6.jpg" alt="" width="180px" class="series">
+                        <img src="2.7.jpg" alt="" width="180px" class="series">
+                        <img src="2.8.jpg" alt="" width="180px" class="series">
+                        <img src="2.9.webp" alt="" width="180px" class="series">
+                        <img src="2.10.jpg" alt="" width="180px" class="series">
+                        <img src="2.11.jpg" alt="" width="180px" class="series">
+                    </div>
+
+                    <h5 class="lr">Comedy Movies</h5>
+                    <div class="film">
+                        <img src="3.1.jpg" alt="" width="180px" class="series">
+                        <img src="3.2.jpg" alt="" width="180px" class="series">
+                        <img src="3.3.jpg" alt="" width="180px" class="series">
+                        <img src="3.4.jpg" alt="" width="180px" class="series">
+                        <img src="3.5.jpg" alt="" width="180px" class="series">
+                        <img src="3.6.jpg" alt="" width="180px" class="series">
+                        <img src="3.7.jpg" alt="" width="180px" class="series">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
